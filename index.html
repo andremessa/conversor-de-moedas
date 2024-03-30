@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    
+    <img class="logo-moeda" src="./assets/moeda-estrela.png" alt="moeda estrela">
+
+    <main>
+        <label>
+            Converter de
+            <select class="moeda-converter">
+                <option value="real">R$ Real</option>
+                <option value="dolar">US$ Dólar Americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="libra">£ Libra Esterlina</option>
+            </select>
+        </label>
+
+        <label>
+            Converter para
+            <select class="moeda-convertida">
+                <option value="dolar">US$ Dólar Americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="libra">£ Libra Esterlina</option>
+                <option value="real">R$ Real</option>
+            </select>
+        </label>
+
+        <label>
+            Valor
+            <input class="valor-converter" type="number" placeholder="Digite o valor">
+        </label>
+
+        <button class="botao-converter">Converter</button>
+
+        <section>
+            <div class="caixa-moeda">
+                <img id="img-moeda-converter" src="./assets/real.png" alt="moeda a converter">
+                <p class="moeda" id="moeda-converter-nome">Real</p>
+                <p class="valor-moeda-converter">R$ 0,00</p>
+            </div>
+
+            <img class="seta" src="./assets/seta.png" alt="seta">
+
+            <div class="caixa-moeda">
+                <img id="img-moeda-convertida" src="./assets/dolar.png" alt="moeda convertida">
+                <p class="moeda" id="moeda-convertida-nome">Dólar</p>
+                <p class="valor-moeda-convertida">US$ 0,00</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/andremessa/" target="_blank">André Messa</a></p>
+    </footer>
+
+</body>
+<script src="./script.js"></script>
+</html>
