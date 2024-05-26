@@ -3,16 +3,21 @@ const moedaConvertida = document.querySelector(".moeda-convertida")
 const moedaConverter = document.querySelector(".moeda-converter")
 
 
-function converterValores() {
+async function  converterValores() {
     const valorAConverter = document.querySelector(".valor-converter").value
     const valorMoedaConverter = document.querySelector(".valor-moeda-converter")
     const valorMoedaConvertida = document.querySelector(".valor-moeda-convertida")
 
+    const moedas = "USD-BRL,EUR-BRL,GBP-BRL,ARS-BRL,JPY-BRL,AUD-BRL,CHF-BRL,CAD-BRL,TRY-BRL"
+    const urlApi = `https://economia.awesomeapi.com.br/last/${moedas}`
+    const data = await fetch(urlApi).then(response => response.json())
+
+    console.log(data);
 
     const realHoje = 1
-    const dolarHoje = 4.9962
-    const euroHoje = 5.3979
-    const libraHoje = 6.3122
+    const dolarHoje = data.USDBRL.high
+    const euroHoje = data.EURBRL.high
+    const libraHoje = data.GBPBRL.high
 
     // MOEDAS A CONVERTER
     if (moedaConverter.value == "dolar") {
